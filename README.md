@@ -82,3 +82,9 @@ http://carve.io/api/v0/documents/create.json?url=http://scottmotte.com/assets/re
   "success": true
 }
 ```
+
+## TODO
+
+* validation on webhook and url
+* url cleansing on webhook and url
+* 500 response returns on errors
