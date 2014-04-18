@@ -12,9 +12,24 @@ I've tried to make it as easy to use as possible, but if you have any feedback p
 * Account at [Iron.io](http://iron.io)
 
 ## Installation
+### Production
 
 ```
-git clone 
+git clone https://github.com/scottmotte/carve-api.git
+cd carve-api
+heroku create -b https://github.com/kr/heroku-buildpack-go.git
+heroku config:set IRON_TOKEN=YOUR_TOKEN 
+heroku config:set IRON_PROJECT_ID=YOUR_PROJECT_ID 
+heroku config:set QUEUE=carve 
+git push heroku master
+heroku open
+```
+
+### Development
+
+```
+git clone https://github.com/scottmotte/carve-api.git
+cd carve-api
 go get github.com/go-martini/martini
 go get github.com/martini-contrib/render
 go get github.com/joho/godotenv
