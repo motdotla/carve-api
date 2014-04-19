@@ -2,7 +2,6 @@ package main
 
 import (
 	"encoding/json"
-	//"fmt"
 	"github.com/go-martini/martini"
 	"github.com/iron-io/iron_go/mq"
 	"github.com/joho/godotenv"
