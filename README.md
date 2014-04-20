@@ -70,7 +70,7 @@ http://carve.io/api/v0/documents/create.json?url=http://scottmotte.com/assets/re
 ```
 {
   "document": {
-    "pngs": [ ]
+    "pages": [ ]
     "status": "unprocessed",
     "url": "http://scottmotte.com/assets/resume.pdf",
     "webhook": "http://requestb.in/nxwuxynx",
