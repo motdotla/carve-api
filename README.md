@@ -1,6 +1,6 @@
 # carve-api 
 
-API for converting PDFs into an array of PNGs
+API for converting PDFs into an array of PNGs.
 
 The carve-api is based on [CONTRA]() API design. [JSON](http://www.json.org) is returned in all responses from the API, including errors. 
 
