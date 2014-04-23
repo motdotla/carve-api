@@ -26,10 +26,7 @@ heroku open
 ```
 git clone https://github.com/scottmotte/carve-api.git
 cd carve-api
-go get github.com/go-martini/martini
-go get github.com/martini-contrib/render
-go get github.com/joho/godotenv
-go get github.com/iron-io/iron_go/mq
+go get 
 cp .env.example .env
 go run app.go
 ```

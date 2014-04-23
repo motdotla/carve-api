@@ -28,7 +28,7 @@ func DocumentsCreate(req *http.Request, r render.Render) {
 	webhook := req.URL.Query().Get("webhook")
 
 	pages := []string{}
-	document := map[string]interface{}{"url": _url, "webhook": webhook, "status": "unprocessed", "pages": pages}
+	document := map[string]interface{}{"url": _url, "webhook": webhook, "status": "processing", "pages": pages}
 	payload := map[string]interface{}{"success": true, "document": document}
 
 	addToQueue(document)
