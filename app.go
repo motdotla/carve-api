@@ -6,7 +6,6 @@ import (
 	"github.com/iron-io/iron_go/mq"
 	"github.com/joho/godotenv"
 	"github.com/martini-contrib/render"
-	"log"
 	"net/http"
 	"os"
 )
@@ -31,17 +30,24 @@ func DocumentsCreate(req *http.Request, r render.Render) {
 	document := map[string]interface{}{"url": _url, "webhook": webhook, "status": "processing", "pages": pages}
 	payload := map[string]interface{}{"success": true, "document": document}
 
-	addToQueue(document)
-
-	r.JSON(200, payload)
+	_, err := addToQueue(document)
+	if err != nil {
+		error_object := map[string]interface{}{"message": err.Error()}
+		err_payload := map[string]interface{}{"success": false, "error": error_object}
+		r.JSON(500, err_payload)
+	} else {
+		r.JSON(200, payload)
+	}
 }
 
-func addToQueue(document interface{}) {
+func addToQueue(document interface{}) (string, error) {
 	marshaled_document, _ := json.Marshal(document)
 	queue := mq.New(os.Getenv("QUEUE"))
 
 	_, err := queue.PushString(string(marshaled_document))
 	if err != nil {
-		log.Fatal(err)
+		return "", err
 	}
+
+	return "", nil
 }

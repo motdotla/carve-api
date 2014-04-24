@@ -76,6 +76,17 @@ http://carve.io/api/v0/documents/create.json?url=http://scottmotte.com/assets/re
 }
 ```
 
+##### Example Error
+
+```
+{
+  "error": {
+    "message": "This is the error message"
+  }
+  "success": false
+}
+```
+
 ## TODO
 
 * validation on webhook and url
