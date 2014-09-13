@@ -4,17 +4,17 @@
 
 API for converting PDFs into an array of PNGs.
 
-## Documentation
+### Documentation
 
 [Documentation](http://docs.carveapi.apiary.io/)
 
-## Installation
+### Installation
 
 Click this button to install to Heroku.
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
-## Development Setup
+### Development Setup
 
 ```
 git clone https://github.com/motdotla/carve-api.git
@@ -26,7 +26,7 @@ go run app.go
 
 Edit the contents of `.env`.
 
-## TODO
+### TODO
 
 * validation on webhook and url
 * url cleansing on webhook and url
