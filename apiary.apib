@@ -5,6 +5,10 @@ HOST: https://carve-api.herokuapp.com
 
 Carve API makes it easy to convert PDFs into an array PNGs.
 
+The carve-api is based on [CONTRA]() API design. [JSON](http://www.json.org) is returned in all responses from the API, including errors.
+
+I've tried to make it as easy to use as possible, but if you have any feedback please [let me know](mailto:mot@mot.la).
+
 ## GET /documents/create.json?url={url}&webhook={webhook}
 
 Create a document to generate PNGs. Allows for POST or GET.
@@ -25,3 +29,11 @@ Create a document to generate PNGs. Allows for POST or GET.
       "success": true
     }
 
++ Response 500 (application/json)
+
+    {
+      "error": {
+        "message": "This is the error message"
+      }
+      "success": false
+    }
