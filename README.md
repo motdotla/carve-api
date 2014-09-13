@@ -12,6 +12,10 @@ I've tried to make it as easy to use as possible, but if you have any feedback p
 
 ### Production
 
+Click this button to install to Heroku.
+
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+
 ```
 git clone https://github.com/motdotla/carve-api.git
 cd carve-api

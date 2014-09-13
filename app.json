@@ -1,0 +1,26 @@
+{
+  "name": "carve-api",
+  "description": "API for converting PDFs into an array of PNGs.",
+  "keywords": [
+    "api",
+    "convert",
+    "PDF",
+    "PNG",
+    "carve"
+  ],
+  "website": "https://github.com/motdotla/carve-api",
+  "repository": "https://github.com/motdotla/carve-api",
+  "logo": "https://raw.githubusercontent.com/motdotla/carve-api/master/carve-api.gif",
+  "env": {
+    "BUILDPACK_URL": "https://github.com/kr/heroku-buildpack-go.git",
+    "QUEUE": {
+      "description": "The name of the queue.",
+      "value": "carve",
+      "required": true
+    }
+  },
+  "addons": [
+    "iron_mq:lite"
+  ]
+}
+
