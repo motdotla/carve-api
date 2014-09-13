@@ -1,17 +1,19 @@
 # carve-api 
 
+<img src="https://raw.githubusercontent.com/motdotla/carve-api/master/carve-api.gif" alt="carve-api" align="right" />
+
 API for converting PDFs into an array of PNGs.
 
 The carve-api is based on [CONTRA]() API design. [JSON](http://www.json.org) is returned in all responses from the API, including errors. 
 
-I've tried to make it as easy to use as possible, but if you have any feedback please [let me know](mailto:scott@scottmotte.com).
+I've tried to make it as easy to use as possible, but if you have any feedback please [let me know](mailto:mot@mot.la).
 
 ## Installation
 
 ### Production
 
 ```
-git clone https://github.com/scottmotte/carve-api.git
+git clone https://github.com/motdotla/carve-api.git
 cd carve-api
 heroku create -b https://github.com/kr/heroku-buildpack-go.git
 heroku config:set IRON_TOKEN=YOUR_TOKEN 
@@ -24,7 +26,7 @@ heroku open
 ### Development
 
 ```
-git clone https://github.com/scottmotte/carve-api.git
+git clone https://github.com/motdotla/carve-api.git
 cd carve-api
 go get 
 cp .env.example .env
@@ -59,7 +61,7 @@ POST|GET http://carve.io/api/v0/documents/create.json?url=[url]&webhook=[webhook
 ##### Example Request
 
 ```
-http://carve.io/api/v0/documents/create.json?url=http://scottmotte.com/assets/resume.pdf&webhook=http://requestb.in/nxwuxynx"
+http://carve.io/api/v0/documents/create.json?url=http://motdotla.com/assets/resume.pdf&webhook=http://requestb.in/nxwuxynx"
 ```
 
 ##### Example Response
@@ -69,7 +71,7 @@ http://carve.io/api/v0/documents/create.json?url=http://scottmotte.com/assets/re
   "document": {
     "pages": [ ]
     "status": "unprocessed",
-    "url": "http://scottmotte.com/assets/resume.pdf",
+    "url": "http://motdotla.com/assets/resume.pdf",
     "webhook": "http://requestb.in/nxwuxynx",
   },
   "success": true
