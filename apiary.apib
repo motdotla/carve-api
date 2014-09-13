@@ -14,7 +14,7 @@ I've tried to make it as easy to use as possible, but if you have any feedback p
 Create a document to generate PNGs. Allows for POST or GET.
 
 + Parameters
-  + url (required, string, `http://motdotla.com/assets/resume.pdf`) ... String `url` of the PDF to convert.
+  + url (required, string, `http://mot.la/assets/resume.pdf`) ... String `url` of the PDF to convert.
   + webhook (required, string, `http://requestb.in/nxwuxynx`) ... String `webhook` where the converted PNGs payload will be deposited.
 
 + Response 200 (application/json)
@@ -23,7 +23,7 @@ Create a document to generate PNGs. Allows for POST or GET.
       "document": {
         "pages": [ ],
         "status": "unprocessed",
-        "url": "http://motdotla.com/assets/resume.pdf",
+        "url": "http://mot.la/assets/resume.pdf",
         "webhook": "http://requestb.in/nxwuxynx"
       },
       "success": true
