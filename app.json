@@ -13,14 +13,19 @@
   "logo": "https://raw.githubusercontent.com/motdotla/carve-api/master/carve-api.gif",
   "env": {
     "BUILDPACK_URL": "https://github.com/kr/heroku-buildpack-go.git",
+    "IRON_TOKEN": {
+      "description": "Get your token at http://iron.io",
+      "required": true
+    },
+    "IRON_PROJECT_ID": {
+      "description": "Get your project id at http://iron.io",
+      "required": true
+    },
     "QUEUE": {
       "description": "The name of the queue.",
       "value": "carve",
       "required": true
     }
-  },
-  "addons": [
-    "iron_mq:lite"
-  ]
+  }
 }
 

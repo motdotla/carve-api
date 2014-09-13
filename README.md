@@ -16,17 +16,6 @@ Click this button to install to Heroku.
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
-```
-git clone https://github.com/motdotla/carve-api.git
-cd carve-api
-heroku create -b https://github.com/kr/heroku-buildpack-go.git
-heroku config:set IRON_TOKEN=YOUR_TOKEN 
-heroku config:set IRON_PROJECT_ID=YOUR_PROJECT_ID 
-heroku config:set QUEUE=carve 
-git push heroku master
-heroku open
-```
-
 ### Development
 
 ```
