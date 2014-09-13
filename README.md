@@ -1,6 +1,6 @@
 # carve-api 
 
-<img src="https://raw.githubusercontent.com/motdotla/carve-api/master/carve-api.gif" alt="carve-api" align="right" />
+<img src="https://raw.githubusercontent.com/motdotla/carve-api/master/carve-api.gif" alt="carve-api" align="right" width="320" />
 
 API for converting PDFs into an array of PNGs.
 
