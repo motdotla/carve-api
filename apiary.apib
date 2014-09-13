@@ -1,0 +1,27 @@
+FORMAT: 1A
+HOST: https://carve-api.herokuapp.com
+
+# carve-api
+
+Carve API makes it easy to convert PDFs into an array PNGs.
+
+## GET /documents/create.json?url={url}&webhook={webhook}
+
+Create a document to generate PNGs. Allows for POST or GET.
+
++ Parameters
+  + url (required, string, `http://motdotla.com/assets/resume.pdf`) ... String `url` of the PDF to convert.
+  + webhook (required, string, `http://requestb.in/nxwuxynx`) ... String `webhook` where the converted PNGs payload will be deposited.
+
++ Response 200 (application/json)
+
+    {
+      "document": {
+        "pages": [ ],
+        "status": "unprocessed",
+        "url": "http://motdotla.com/assets/resume.pdf",
+        "webhook": "http://requestb.in/nxwuxynx"
+      },
+      "success": true
+    }
+
