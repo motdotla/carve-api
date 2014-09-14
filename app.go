@@ -35,7 +35,6 @@ func main() {
 	loadEnvs()
 
 	m := martini.Classic()
-	m.Use(martini.Logger())
 	m.Use(render.Renderer())
 
 	m.Any("/api/v0/documents/create.json", binding.Bind(Document{}), DocumentsCreate)
