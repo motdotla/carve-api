@@ -20,20 +20,20 @@ Create a document to generate PNGs. Allows for POST or GET.
 + Response 200 (application/json)
 
     {
-      "document": {
+      "documents": [{
         "pages": [ ],
         "status": "unprocessed",
         "url": "http://mot.la/assets/resume.pdf",
         "webhook": "http://requestb.in/nxwuxynx"
-      },
-      "success": true
+      }]
     }
 
 + Response 500 (application/json)
 
     {
-      "error": {
-        "message": "This is the error message"
-      }
-      "success": false
+      "errors": [{
+        "code": "required",
+        "field": "url",
+        "message": "url cannot be blank"
+      }]
     }
