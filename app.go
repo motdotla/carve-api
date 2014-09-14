@@ -27,8 +27,9 @@ func CrossDomain() martini.Handler {
 }
 
 type Document struct {
-	Url     string `form:"url" json:"url"`
-	Webhook string `form:"webhook" json:"webhook"`
+	Url        string `form:"url" json:"url"`
+	Webhook    string `form:"webhook" json:"webhook"`
+	Postscript string `form:"postscript" json:"postscript"`
 }
 
 func main() {
@@ -51,10 +52,14 @@ func ErrorPayload(logic_error *handshakejserrors.LogicError) map[string]interfac
 	return payload
 }
 
-func DocumentsPayload(document map[string]interface{}) map[string]interface{} {
+func DocumentsPayload(document map[string]interface{}, postscript string) map[string]interface{} {
 	documents := []interface{}{}
 	documents = append(documents, document)
 	payload := map[string]interface{}{"documents": documents}
+	if postscript != "" {
+		meta := map[string]interface{}{"postscript": postscript}
+		payload["meta"] = meta
+	}
 
 	return payload
 }
@@ -62,6 +67,7 @@ func DocumentsPayload(document map[string]interface{}) map[string]interface{} {
 func DocumentsCreate(document Document, req *http.Request, r render.Render) {
 	_url := document.Url
 	webhook := document.Webhook
+	postscript := document.Postscript
 
 	pages := []string{}
 	params := map[string]interface{}{"url": _url, "webhook": webhook, "status": "processing", "pages": pages}
@@ -72,7 +78,7 @@ func DocumentsCreate(document Document, req *http.Request, r render.Render) {
 		statuscode := determineStatusCodeFromLogicError(logic_error)
 		r.JSON(statuscode, payload)
 	} else {
-		payload := DocumentsPayload(params)
+		payload := DocumentsPayload(params, postscript)
 		r.JSON(200, payload)
 	}
 }
