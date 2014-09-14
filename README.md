@@ -4,7 +4,11 @@
 
 API for converting PDFs into an array of PNGs. Works in tandem with [carve-worker](https://github.com/motdotla/carve-worker).
 
-You can view the [documentation](http://docs.carveapi.apiary.io/).
+```
+curl https://carve-api.herokuapp.com/api/v0/documents/create.json?url=http://mot.la/assets/resume.pdf&webhook=http://requestb.in/some-request-bin-url
+```
+
+View the [documentation](http://docs.carveapi.apiary.io/).
 
 ## Installation
 
