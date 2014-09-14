@@ -71,14 +71,14 @@ func DocumentsCreate(document Document, req *http.Request, r render.Render) {
 
 	pages := []string{}
 	params := map[string]interface{}{"url": _url, "webhook": webhook, "status": "processing", "pages": pages}
+	payload := DocumentsPayload(params, postscript)
 
-	_, logic_error := addToQueue(params)
+	_, logic_error := addToQueue(payload)
 	if logic_error != nil {
-		payload := ErrorPayload(logic_error)
+		payload = ErrorPayload(logic_error)
 		statuscode := determineStatusCodeFromLogicError(logic_error)
 		r.JSON(statuscode, payload)
 	} else {
-		payload := DocumentsPayload(params, postscript)
 		r.JSON(200, payload)
 	}
 }
